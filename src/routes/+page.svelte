@@ -1,59 +1,225 @@
-<script>
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
+<script lang="ts">
+	import { onMount } from 'svelte';
+
+	import homeSlider1 from '$lib/images/home-slider1.png';
+	import homeSlider2 from '$lib/images/home-slider2.png';
+	import homeSlider3 from '$lib/images/home-slider3.png';
+	import homeSlider4 from '$lib/images/home-slider4.png';
+	import homeSlider5 from '$lib/images/home-slider5.png';
+	import logoSquare from '$lib/images/logo-square.png';
+	import personel from '$lib/images/personel.png';
+	import latestRelease from '$lib/images/latest-release.png';
+	import asset1 from '$lib/images/asset1.png';
+	import playBtn from '$lib/icons/play-btn.svg';
+
+	const homeSliders = [homeSlider1, homeSlider2, homeSlider3, homeSlider4, homeSlider5];
+	let currentSlide = 0;
+
+	const creatorPicks = [
+		{
+			title: 'Cold Turkey',
+			artist: 'Mad Madmen',
+			type: 'Single',
+			year: 2019,
+			duration: '3:25',
+			link: '#song1'
+		},
+		{
+			title: 'The Striker',
+			artist: 'Mad Madmen ft. Ade Paloh',
+			type: 'Mental Breakdance',
+			year: 2021,
+			duration: '4:37'
+		},
+		{
+			title: 'B.K.B / Kalam...',
+			artist: 'Mad Madmen',
+			type: 'Mental Breakdance',
+			year: 2021,
+			duration: '4:20'
+		},
+		{
+			title: "Big Ol' Jazzm...",
+			artist: 'Mad Madmen',
+			type: 'Mental Breakdance',
+			year: 2021,
+			duration: '5:08'
+		},
+		{
+			title: 'ACHTUNG!',
+			artist: 'Mad Madmen ft. Gracia A...',
+			type: 'Mental Breakdance',
+			year: 2021,
+			duration: '5:30'
+		}
+	];
+
+	const nextSlide = () => {
+		console.log('next slide');
+		currentSlide = currentSlide === homeSliders.length - 1 ? 0 : currentSlide + 1;
+	};
+
+	onMount(() => {
+		const interval = setInterval(nextSlide, 3000);
+		return () => clearInterval(interval);
+	});
 </script>
 
 <svelte:head>
 	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<meta name="description" content="The MadMan" />
 </svelte:head>
 
-<section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
+<div class="grid grid-cols-12 gap-x-5 mt-20">
+	<div class="col-span-8 rounded-xl border-madblue border-4 overflow-hidden">
+		{#each homeSliders as slide, i}
+			<img src={slide} alt="home slider" class="w-full" class:hidden={i != currentSlide} />
+		{/each}
+	</div>
+	<div class="col-span-4 grid grid-row-12 h-full font-anton gap-y-10">
+		<div class="row-span-8">
+			<p class="px-4 py-8 bg-madred capitalize text-madyellow text-lg">
+				upcoming shows / local dates
+			</p>
+			<div class="px-8 pt-12 pb-4 bg-madsecondary">
+				<p class="text-6xl">2 JUN</p>
+				<p class="text-xl mt-6 mb-8 font-roboto">BIANG KEROK / Jakarta, INA</p>
+				<a href="#" class="block py-4 transition-all text-madyellow animate-blink-fast text-center"
+					>Notify Me</a
+				>
+			</div>
+		</div>
+		<div class="row-span-4 grid grid-cols-2 bg-white border-madpurple border-2">
+			<img src={logoSquare} alt="suare logo" class="w-full p-2 border-r border-black" />
+			<div class="flex items-center">
+				<p class="p-2 px-6 underline text-3xl text-madblue animate-text-blink">
+					JAZZED-UP<br />FUNKADELIC<br />PROG-POP<br />POWER TRIO
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="bg-white border-madgreen border-2 rounded-xl grid grid-cols-12 mt-20 shadow-bio">
+	<div class="h-full relative w-full col-span-4">
+		<img src={personel} alt="personel" class="absolute left-[10%] bottom-0 h-[125%]" />
+	</div>
+	<div class="h-full col-span-6 col-start-5 py-8">
+		<h1 class="font-jotione text-8xl animate-logo-text transition-colors">The Madmen</h1>
+		<p class="text-madblue font-roboto my-4">
+			Mad Madmen are a Jakarta based musical trio formed in 2018. The band consists of Kalam
+			Mahardhika (Guitar/Vocals), Marvin Muhammad (Bass/Vocals) and Andika Rahimy (Drums). The
+			musical dynamic of Mad Madmen plays upon mixing complex rhythmic and melodic properties along
+			with multiple idiomatic elements all of which are glued together by extended jams. ...
+		</p>
+		<a href="#more" class="text-madblue underline uppercase font-roboto font-bold">More</a>
+	</div>
+</div>
 
-		to your new<br />SvelteKit app
-	</h1>
+<div class="flex gap-x-4 max-h-[500px] h-full">
+	<div class="h-full mt-8 flex-grow">
+		<h2 class="px-8 py-4 bg-madred text-white capitalize font-anton text-4xl">Latest release</h2>
+		<div class="flex h-fit bg-madlightgrey">
+			<div class="bg-black">
+				<img src={latestRelease} alt="latest release" class=" object-cover h-[400px]" />
+			</div>
+			<div class="h-full py-12 px-8 flex-grow">
+				<p class="font-anton text-6xl text-madred mb-12">MAHAPURA</p>
+				<p class="font-roboto text-sm mb-6">SINGLE | Mad Madmen ft. Anda Perdana |2023 | 5:24</p>
 
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
+				<a href="#listen" class="text-madblue underline font-roboto uppercase font-bold text-xl"
+					>listen now</a
+				>
+			</div>
+		</div>
+	</div>
+	<div class="max-h-[500px] h-full">
+		<div class="flex justify-center">
+			<img src={asset1} alt="asset1" class="h-[200px]" />
+		</div>
+		<div class="bg-madyellow p-4 h-[300px] flex flex-col shadow-picks">
+			<p class="text-center font-barriecito text-3xl text-madblue pb-4">Creator's Picks</p>
+			<div class="h-full bg-black overflow-y-scroll">
+				<div class="p-4 bg-white">
+					{#each creatorPicks as pick}
+						<div class="flex justify-between">
+							<div>
+								<p class=" font-roboto text-xl font-bold border-b-2 border-black w-fit mb-1">
+									{pick.title}
+								</p>
+								<p class="font-roboto text-sm">{pick.artist}</p>
+							</div>
+							<img src={playBtn} alt="play button" class="h-8" />
+						</div>
 
-	<Counter />
-</section>
+						<div
+							class="flex justify-between font-roboto text-xs mt-2 border-b-2 border-madlightgrey mb-4"
+						>
+							<p>{pick.type} | {pick.year}</p>
+							<span>{pick.duration}</span>
+						</div>
+					{/each}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 <style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
+	.shadow-bio {
+		box-shadow: 0 4px 5px 4px rgba(0, 0, 0, 0.2);
 	}
 
-	h1 {
-		width: 100%;
+	.shadow-picks {
+		box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+	}
+	@keyframes blink {
+		0%,
+		100% {
+			background-color: #ff0000;
+		}
+		50% {
+			background-color: #41c508;
+		}
 	}
 
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
+	.animate-blink-fast {
+		animation: blink 0.25s infinite;
 	}
 
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
+	@keyframes text-blink {
+		0%,
+		100% {
+			color: #0000fe;
+		}
+		20% {
+			color: #cc00ff;
+		}
+		40% {
+			color: #ff0000;
+		}
+		60% {
+			color: #ffcc00;
+		}
+		80% {
+			color: #41c508;
+		}
+	}
+
+	@keyframes logo-text {
+		0%,
+		100% {
+			color: #cc00ff;
+		}
+		50% {
+			color: #00fff0;
+		}
+	}
+
+	.animate-text-blink {
+		animation: text-blink 5s infinite;
+	}
+
+	.animate-logo-text {
+		animation: logo-text 2s infinite;
 	}
 </style>
