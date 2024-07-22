@@ -8,6 +8,7 @@ export default {
         roboto: ["Roboto", "sans-serif"],
         jotione: ["Joti One", "serif"],
         barriecito: ["Barriecito", "system-ui"],
+        comic: ["Comic Neue", "cursive"],
       },
       colors: {
         madblue: "#0000FE",

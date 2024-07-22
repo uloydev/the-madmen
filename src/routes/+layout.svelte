@@ -10,6 +10,7 @@
 	import instagramIcon from '$lib/icons/instagram.png';
 	import spotifyIcon from '$lib/icons/spotify.png';
 	import appleMusicIcon from '$lib/icons/apple-music.png';
+	import { page } from '$app/stores';
 
 	const socials = [
 		{ name: 'spotify', icon: spotifyIcon, link: 'https://www.spotify.com' },
@@ -30,9 +31,7 @@
 	// check current page path
 	let path: string;
 
-	onMount(() => {
-		path = window.location.pathname;
-	});
+	$: path = $page.url.pathname;
 </script>
 
 <div class="overflow-x-hidden">
@@ -41,50 +40,52 @@
 			class=" h-[75px] pl-6 pr-8 w-full bg-gradient-to-b from-[#0000FE] to-[#000098] flex justify-between"
 		>
 			<div class="flex items-center">
-				<img src={logo} alt="logo mad madmen" class="h-[50px]" />
+				<a href="/">
+					<img src={logo} alt="logo mad madmen" class="h-[50px]" />
+				</a>
 			</div>
 			<div class="flex gap-x-8 font-anton items-center text-white text-2xl capitalize">
 				<a
 					href="/about"
 					class="border-b border-white"
-					class:border-madyellow={path == '/about'}
-					class:text-madyellow={path == '/about'}>about</a
+					class:border-madyellow={path.includes('/about')}
+					class:text-madyellow={path.includes('/about')}>about</a
 				>
 				<a
 					href="/music"
 					class="border-b border-white"
-					class:border-madyellow={path == '/music'}
-					class:text-madyellow={path == '/music'}>music</a
+					class:border-madyellow={path.includes('/music')}
+					class:text-madyellow={path.includes('/music')}>music</a
 				>
 				<a
 					href="/galery"
 					class="border-b border-white"
-					class:border-madyellow={path == '/galery'}
-					class:text-madyellow={path == '/galery'}>galery</a
+					class:border-madyellow={path.includes('/galery')}
+					class:text-madyellow={path.includes('/galery')}>galery</a
 				>
 				<a
 					href="/tour"
 					class="border-b border-white"
-					class:border-madyellow={path == '/tour'}
-					class:text-madyellow={path == '/tour'}>tour</a
+					class:border-madyellow={path.includes('/tour')}
+					class:text-madyellow={path.includes('/tour')}>tour</a
 				>
 				<a
 					href="/shop"
 					class="border-b border-white"
-					class:border-madyellow={path == '/shop'}
-					class:text-madyellow={path == '/shop'}>shop</a
+					class:border-madyellow={path.includes('/shop')}
+					class:text-madyellow={path.includes('/shop')}>shop</a
 				>
 				<a
 					href="/contact"
 					class="border-b border-white"
-					class:border-madyellow={path == '/contact'}
-					class:text-madyellow={path == '/contact'}>contact</a
+					class:border-madyellow={path.includes('/contact')}
+					class:text-madyellow={path.includes('/contact')}>contact</a
 				>
 				<a
 					href="/discord"
 					class="border-b border-white"
-					class:border-madyellow={path == '/discord'}
-					class:text-madyellow={path == '/discord'}>discord</a
+					class:border-madyellow={path.includes('/discord')}
+					class:text-madyellow={path.includes('/discord')}>discord</a
 				>
 			</div>
 		</nav>

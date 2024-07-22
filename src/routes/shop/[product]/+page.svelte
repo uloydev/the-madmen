@@ -52,7 +52,7 @@
 
 <div class="pt-20">
 	<div class="text-madblue font-anton underline text-3xl flex gap-x-4 capitalize mb-10">
-		<a href="/shop">About</a>
+		<a href="/shop">Shop</a>
 		<span>&gt;</span>
 		<a href="/shop/{data.id}">{data.title}</a>
 	</div>
