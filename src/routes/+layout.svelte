@@ -89,37 +89,37 @@
 				>
 			</div>
 		</nav>
-		<!-- <div
+		<div
 		id="runningText"
 		class="w-screen py-10 absolute left-0 text-madgreen text-xl font-anton overflow-hidden"
 	>
-		<div class="running-wrapper relative w-screen text-nowrap">
-			<span class="running-item running-item-1">Lorem, ipsum dolor.</span>
+		<div class="running-wrapper relative w-screen text-nowrap flex items-center justify-evenly">
+			<span class="running-item running-item-1">MAHARUPA - OUT NOW!</span>
 			<div class="inline-block running-item running-item-2 h-4 w-4">
 				<span class="h-4 w-4 inline-block bg-madgreen rounded-full mx-4"></span>
 			</div>
-			<span class="running-item running-item-3">Lorem, ipsum dolor.</span>
+			<span class="running-item running-item-3">MAHARUPA - OUT NOW!</span>
 			<div class="inline-block running-item running-item-4 h-4 w-4">
 				<span class="h-4 w-4 inline-block bg-madgreen rounded-full mx-4"></span>
 			</div>
-			<span class="running-item running-item-5">Lorem, ipsum dolor.</span>
+			<span class="running-item running-item-5">MAHARUPA - OUT NOW!</span>
 			<div class="inline-block running-item running-item-6 h-4 w-4">
 				<span class="h-4 w-4 inline-block bg-madgreen rounded-full mx-4"></span>
 			</div>
-			<span class="running-item running-item-7">Lorem, ipsum dolor.</span>
+			<span class="running-item running-item-7">MAHARUPA - OUT NOW!</span>
 			<div class="inline-block running-item running-item-8 h-4 w-4">
 				<span class="h-4 w-4 inline-block bg-madgreen rounded-full mx-4"></span>
 			</div>
-			<span class="running-item running-item-9">Lorem, ipsum dolor.</span>
+			<span class="running-item running-item-9">MAHARUPA - OUT NOW!</span>
 			<div class="inline-block running-item running-item-10 h-4 w-4">
 				<span class="h-4 w-4 inline-block bg-madgreen rounded-full mx-4"></span>
 			</div>
-			<span class="running-item running-item-11">Lorem, ipsum dolor.</span>
+			<span class="running-item running-item-11">MAHARUPA - OUT NOW!</span>
 			<div class="inline-block running-item running-item-12 h-4 w-4">
 				<span class="h-4 w-4 inline-block bg-madgreen rounded-full mx-4"></span>
 			</div>
 		</div>
-	</div> -->
+	</div>
 		<main>
 			<slot />
 		</main>
