@@ -58,10 +58,10 @@
 					class:text-madyellow={path.includes('/music')}>music</a
 				>
 				<a
-					href="/galery"
+					href="/gallery"
 					class="border-b border-white"
-					class:border-madyellow={path.includes('/galery')}
-					class:text-madyellow={path.includes('/galery')}>galery</a
+					class:border-madyellow={path.includes('/gallery')}
+					class:text-madyellow={path.includes('/gallery')}>gallery</a
 				>
 				<a
 					href="/tour"
