@@ -30,7 +30,6 @@ export async function load({ params }) {
     const data = await resp.json();
     // @ts-ignore
     data.items.forEach((item, i) => {
-        console.log(item);
         result.push({
             id: videoIds[i],
             publishedAt: formatPublishedDate(item.snippet.publishedAt),
