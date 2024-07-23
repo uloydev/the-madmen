@@ -271,12 +271,12 @@
 		class:hidden={!photoSliderActive}
 		on:click={handleOutsideClick}
 	>
-		<div class="relative w-full max-w-[60%] max-h-[75%]">
+		<div class="relative w-full max-w-[60%]">
 			{#each photoSlider as photo, idx}
 				<img
 					src={photo}
 					alt="photo {idx}"
-					class="w-full aspect-video absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+					class="w-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
 					class:hidden={currentImage != idx}
 				/>
 			{/each}

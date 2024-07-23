@@ -89,37 +89,59 @@
 				>
 			</div>
 		</nav>
-		<div
-		id="runningText"
-		class="w-screen py-10 absolute left-0 text-madgreen text-xl font-anton overflow-hidden"
-	>
-		<div class="running-wrapper relative w-screen text-nowrap flex items-center justify-evenly">
-			<span class="running-item running-item-1">MAHARUPA - OUT NOW!</span>
-			<div class="inline-block running-item running-item-2 h-4 w-4">
-				<span class="h-4 w-4 inline-block bg-madgreen rounded-full mx-4"></span>
-			</div>
-			<span class="running-item running-item-3">MAHARUPA - OUT NOW!</span>
-			<div class="inline-block running-item running-item-4 h-4 w-4">
-				<span class="h-4 w-4 inline-block bg-madgreen rounded-full mx-4"></span>
-			</div>
-			<span class="running-item running-item-5">MAHARUPA - OUT NOW!</span>
-			<div class="inline-block running-item running-item-6 h-4 w-4">
-				<span class="h-4 w-4 inline-block bg-madgreen rounded-full mx-4"></span>
-			</div>
-			<span class="running-item running-item-7">MAHARUPA - OUT NOW!</span>
-			<div class="inline-block running-item running-item-8 h-4 w-4">
-				<span class="h-4 w-4 inline-block bg-madgreen rounded-full mx-4"></span>
-			</div>
-			<span class="running-item running-item-9">MAHARUPA - OUT NOW!</span>
-			<div class="inline-block running-item running-item-10 h-4 w-4">
-				<span class="h-4 w-4 inline-block bg-madgreen rounded-full mx-4"></span>
-			</div>
-			<span class="running-item running-item-11">MAHARUPA - OUT NOW!</span>
-			<div class="inline-block running-item running-item-12 h-4 w-4">
-				<span class="h-4 w-4 inline-block bg-madgreen rounded-full mx-4"></span>
+
+		<div class="w-screen h-20 absolute right-0">
+			<div class="wrapper font-anton text-madgreen text-xl">
+				<div class="item item1"><span class="flex w-full h-full justify-center items-center">MAHARUPA - OUT NOW!</span></div>
+				<div class="item item2">
+					<div class=" flex justify-center items-center w-full h-full">
+						<span class="h-5 w-5 bg-madgreen rounded-full"></span>
+					</div>
+				</div>
+				<div class="item item3"><span class="flex w-full h-full justify-center items-center">MAHARUPA - OUT NOW!</span></div>
+				<div class="item item4">
+					<div class=" flex justify-center items-center w-full h-full">
+						<span class="h-5 w-5 bg-madgreen rounded-full"></span>
+					</div>
+				</div>
+				<div class="item item5"><span class="flex w-full h-full justify-center items-center">MAHARUPA - OUT NOW!</span></div>
+				<div class="item item6">
+					<div class=" flex justify-center items-center w-full h-full">
+						<span class="h-5 w-5 bg-madgreen rounded-full"></span>
+					</div>
+				</div>
+				<div class="item item7"><span class="flex w-full h-full justify-center items-center">MAHARUPA - OUT NOW!</span></div>
+				<div class="item item8">
+					<div class=" flex justify-center items-center w-full h-full">
+						<span class="h-5 w-5 bg-madgreen rounded-full"></span>
+					</div>
+				</div>
+				<div class="item item9"><span class="flex w-full h-full justify-center items-center">MAHARUPA - OUT NOW!</span></div>
+				<div class="item item10">
+					<div class=" flex justify-center items-center w-full h-full">
+						<span class="h-5 w-5 bg-madgreen rounded-full"></span>
+					</div>
+				</div>
+				<div class="item item11"><span class="flex w-full h-full justify-center items-center">MAHARUPA - OUT NOW!</span></div>
+				<div class="item item12">
+					<div class=" flex justify-center items-center w-full h-full">
+						<span class="h-5 w-5 bg-madgreen rounded-full"></span>
+					</div>
+				</div>
+				<div class="item item13"><span class="flex w-full h-full justify-center items-center">MAHARUPA - OUT NOW!</span></div>
+				<div class="item item14">
+					<div class=" flex justify-center items-center w-full h-full">
+						<span class="h-5 w-5 bg-madgreen rounded-full"></span>
+					</div>
+				</div>
+				<div class="item item15"><span class="flex w-full h-full justify-center items-center">MAHARUPA - OUT NOW!</span></div>
+				<div class="item item16">
+					<div class=" flex justify-center items-center w-full h-full">
+						<span class="h-5 w-5 bg-madgreen rounded-full"></span>
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>
 		<main>
 			<slot />
 		</main>
@@ -181,76 +203,112 @@
 </div>
 
 <style>
-	.bg-footer {
+	.wrapper {
+		margin-inline: auto;
+		position: relative;
+		height: 5rem;
+		overflow: hidden;
+		display: flex;
 	}
 
-	.running-item {
-		top: 50%;
-		transform: translateY(-50%);
-		position: absolute;
-		left: 100%;
-		animation-name: runningText;
-		animation-duration: 20s;
-		animation-iteration-count: infinite;
-		animation-timing-function: linear;
-	}
-
-	/* even child of running test wrapper */
-	.running-item:nth-child(even) {
-		transform: translate(300%, -100%);
-	}
-
-	@keyframes runningText {
+	@keyframes scrollLeftodd {
 		to {
 			left: -200px;
 		}
 	}
 
-	.running-item-1 {
-		animation-delay: calc(20s / 12 * (12 - 1));
+	@keyframes scrollLefteven {
+		to {
+			left: -200px;
+		}
 	}
 
-	.running-item-2 {
-		animation-delay: calc(20s / 12 * (12 - 2));
+	/* item odd */
+	.item:nth-child(even) {
+		width: 200px;
+		height: 5rem;
+		/* background-color: red; */
+		position: absolute;
+		left: max(calc((200px) * 16), 100%);
+		animation-name: scrollLefteven;
+		animation-duration: 30s;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
 	}
 
-	.running-item-3 {
-		animation-delay: calc(20s / 12 * (12 - 3));
+	.item:nth-child(odd) {
+		width: 200px;
+		height: 5rem;
+		/* background-color: red; */
+		position: absolute;
+		left: max(calc(200px * 16), 100%);
+		animation-name: scrollLeftodd;
+		animation-duration: 30s;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
 	}
 
-	.running-item-4 {
-		animation-delay: calc(20s / 12 * (12 - 4));
+	.item1 {
+		animation-delay: calc(30s / 16 * (16 - 1) * -1);
 	}
 
-	.running-item-5 {
-		animation-delay: calc(20s / 12 * (12 - 5));
+	.item2 {
+		animation-delay: calc(30s / 16 * (16 - 2) * -1);
 	}
 
-	.running-item-6 {
-		animation-delay: calc(20s / 12 * (12 - 6));
+	.item3 {
+		animation-delay: calc(30s / 16 * (16 - 3) * -1);
 	}
 
-	.running-item-7 {
-		animation-delay: calc(20s / 12 * (12 - 7));
+	.item4 {
+		animation-delay: calc(30s / 16 * (16 - 4) * -1);
 	}
 
-	.running-item-8 {
-		animation-delay: calc(20s / 12 * (12 - 8));
+	.item5 {
+		animation-delay: calc(30s / 16 * (16 - 5) * -1);
 	}
 
-	.running-item-9 {
-		animation-delay: calc(20s / 12 * (12 - 9));
+	.item6 {
+		animation-delay: calc(30s / 16 * (16 - 6) * -1);
 	}
 
-	.running-item-10 {
-		animation-delay: calc(20s / 12 * (12 - 10));
+	.item7 {
+		animation-delay: calc(30s / 16 * (16 - 7) * -1);
 	}
 
-	.running-item-11 {
-		animation-delay: calc(20s / 12 * (12 - 11));
+	.item8 {
+		animation-delay: calc(30s / 16 * (16 - 8) * -1);
 	}
 
-	.running-item-12 {
-		animation-delay: calc(20s / 12 * (12 - 12));
+	.item9 {
+		animation-delay: calc(30s / 16 * (16 - 9) * -1);
+	}
+
+	.item10 {
+		animation-delay: calc(30s / 16 * (16 - 10) * -1);
+	}
+
+	.item11 {
+		animation-delay: calc(30s / 16 * (16 - 11) * -1);
+	}
+
+	.item12 {
+		animation-delay: calc(30s / 16 * (16 - 12) * -1);
+	}
+
+	.item13 {
+		animation-delay: calc(30s / 16 * (16 - 13) * -1);
+	}
+
+	.item14 {
+		animation-delay: calc(30s / 16 * (16 - 14) * -1);
+	}
+
+	.item15 {
+		animation-delay: calc(30s / 16 * (16 - 15) * -1);
+	}
+
+	.item16 {
+		animation-delay: calc(30s / 16 * (16 - 16) * -1);
 	}
 </style>
