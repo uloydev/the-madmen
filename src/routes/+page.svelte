@@ -70,14 +70,14 @@
 	<meta name="description" content="The MadMan" />
 </svelte:head>
 
-<div class="grid grid-cols-12 gap-x-5 mt-20">
-	<div class="col-span-8 rounded-xl border-madblue border-4 overflow-hidden">
+<div class=" gap-x-5 mt-20 px-2 sm:px-0 sm:grid sm:grid-cols-12">
+	<div class="w-full mb-4 sm:mb-0 sm:col-span-8 rounded-xl border-madblue border-4 overflow-hidden">
 		{#each homeSliders as slide, i}
 			<img src={slide} alt="home slider" class="w-full" class:hidden={i != currentSlide} />
 		{/each}
 	</div>
-	<div class="col-span-4 grid grid-row-12 h-full font-anton gap-y-10">
-		<div class="row-span-8">
+	<div class="col-span-4 grid grid-row-12 h-full font-anton gap-y-4 sm:gap-y-10">
+		<div class="row-span-8 row-start-5 sm:row-start-1">
 			<p class="px-4 py-8 bg-madred capitalize text-madyellow text-lg">
 				upcoming shows / local dates
 			</p>
@@ -89,8 +89,8 @@
 				>
 			</div>
 		</div>
-		<div class="row-span-4 grid grid-cols-2 bg-white border-madpurple border-2">
-			<img src={logoSquare} alt="suare logo" class="w-full p-2 border-r border-black" />
+		<div class="row-span-4 sm:row-start-9 row-start-1 grid grid-cols-2 bg-white border-madpurple border-2">
+			<img src={logoSquare} alt="suare logo" class="w-full sm:p-2 border-r border-black" />
 			<div class="flex items-center">
 				<p class="p-2 px-6 underline text-3xl text-madblue animate-text-blink">
 					JAZZED-UP<br />FUNKADELIC<br />PROG-POP<br />POWER TRIO
