@@ -10,6 +10,7 @@
 	import instagramIcon from '$lib/icons/instagram.png';
 	import spotifyIcon from '$lib/icons/spotify.png';
 	import appleMusicIcon from '$lib/icons/apple-music.png';
+	import burger from '$lib/images/burger.png';
 	import { page } from '$app/stores';
 
 	const socials = [
@@ -31,62 +32,89 @@
 	// check current page path
 	let path: string;
 
+	let showNavbar = false;
+
+	const toggleNavbar = () => {
+		showNavbar = !showNavbar;
+	};
+
+
 	$: path = $page.url.pathname;
+
+	onMount(() => {
+		showNavbar = false;
+	});
 </script>
 
 <div class="overflow-x-hidden">
-	<div class="app sm:container sm:mx-auto pt-2 px-12">
+	<div class="app sm:container sm:mx-auto sm:pt-2 sm:px-12">
 		<nav
-			class=" h-[75px] pl-6 pr-8 w-full bg-gradient-to-b from-[#0000FE] to-[#000098] flex justify-between"
+			class=" h-[75px] pl-6 pr-8 w-full bg-gradient-to-b from-[#0000FE] to-[#000098] flex justify-between relative"
 		>
 			<div class="flex items-center">
 				<a href="/">
-					<img src={logo} alt="logo mad madmen" class="h-[50px]" />
+					<img src={logo} alt="logo mad madmen" class="h-[30px] sm:h-[50px]" />
 				</a>
 			</div>
-			<div class="flex gap-x-8 font-anton items-center text-white text-2xl capitalize">
-				<a
-					href="/about"
-					class="border-b border-white"
-					class:border-madyellow={path.includes('/about')}
-					class:text-madyellow={path.includes('/about')}>about</a
-				>
-				<a
-					href="/music"
-					class="border-b border-white"
-					class:border-madyellow={path.includes('/music')}
-					class:text-madyellow={path.includes('/music')}>music</a
-				>
-				<a
-					href="/gallery"
-					class="border-b border-white"
-					class:border-madyellow={path.includes('/gallery')}
-					class:text-madyellow={path.includes('/gallery')}>gallery</a
-				>
-				<a
-					href="/tour"
-					class="border-b border-white"
-					class:border-madyellow={path.includes('/tour')}
-					class:text-madyellow={path.includes('/tour')}>tour</a
-				>
-				<a
-					href="/shop"
-					class="border-b border-white"
-					class:border-madyellow={path.includes('/shop')}
-					class:text-madyellow={path.includes('/shop')}>shop</a
-				>
-				<a
-					href="/contact"
-					class="border-b border-white"
-					class:border-madyellow={path.includes('/contact')}
-					class:text-madyellow={path.includes('/contact')}>contact</a
-				>
-				<a
-					href="/discord"
-					class="border-b border-white"
-					class:border-madyellow={path.includes('/discord')}
-					class:text-madyellow={path.includes('/discord')}>discord</a
-				>
+			<button class="text-white block sm:hidden" on:click={toggleNavbar}><img src={burger} alt="burger" class=" h-5"></button>
+			<div class="flex flex-col gap-x-8 font-anton sm:items-center text-white text-2xl capitalize sm:flex-row absolute top-full z-10 bg-madblue w-full left-0 sm:static sm:bg-transparent sm:w-fit py-8 sm:py-0 sm:flex" class:hidden={!showNavbar}>
+				<div class="px-4 py-2 text-center sm:p-0">
+					<a
+						href="/about"
+						class="border-b border-white"
+						class:border-madyellow={path.includes('/about')}
+						class:text-madyellow={path.includes('/about')}>about</a
+					>
+				</div>
+				<div class="px-4 py-2 text-center sm:p-0">
+					<a
+						href="/music"
+						class="border-b border-white"
+						class:border-madyellow={path.includes('/music')}
+						class:text-madyellow={path.includes('/music')}>music</a
+					>
+				</div>
+				<div class="px-4 py-2 text-center sm:p-0">
+					<a
+						href="/gallery"
+						class="border-b border-white"
+						class:border-madyellow={path.includes('/gallery')}
+						class:text-madyellow={path.includes('/gallery')}>gallery</a
+					>
+
+				</div>
+				<div class="px-4 py-2 text-center sm:p-0">
+					<a
+						href="/tour"
+						class="border-b border-white"
+						class:border-madyellow={path.includes('/tour')}
+						class:text-madyellow={path.includes('/tour')}>tour</a
+					>
+				</div>
+				<div class="px-4 py-2 text-center sm:p-0">
+					<a
+						href="/shop"
+						class="border-b border-white"
+						class:border-madyellow={path.includes('/shop')}
+						class:text-madyellow={path.includes('/shop')}>shop</a
+					>
+				</div>
+				<div class="px-4 py-2 text-center sm:p-0">
+					<a
+						href="/contact"
+						class="border-b border-white"
+						class:border-madyellow={path.includes('/contact')}
+						class:text-madyellow={path.includes('/contact')}>contact</a
+					>
+				</div>
+				<div class="px-4 py-2 text-center sm:p-0">
+					<a
+						href="/discord"
+						class="border-b border-white"
+						class:border-madyellow={path.includes('/discord')}
+						class:text-madyellow={path.includes('/discord')}>discord</a
+					>
+				</div>
 			</div>
 		</nav>
 
@@ -142,7 +170,7 @@
 				</div>
 			</div>
 		</div>
-		<main>
+		<main class="px-2 sm:px-0">
 			<slot />
 		</main>
 
