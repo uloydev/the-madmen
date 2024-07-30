@@ -38,6 +38,9 @@
 		showNavbar = !showNavbar;
 	};
 
+	const handleNavItemClick = () => {
+		showNavbar = false;
+	};
 
 	$: path = $page.url.pathname;
 
@@ -56,10 +59,16 @@
 					<img src={logo} alt="logo mad madmen" class="h-[30px] sm:h-[50px]" />
 				</a>
 			</div>
-			<button class="text-white block sm:hidden" on:click={toggleNavbar}><img src={burger} alt="burger" class=" h-5"></button>
-			<div class="flex flex-col gap-x-8 font-anton sm:items-center text-white text-2xl capitalize sm:flex-row absolute top-full z-10 bg-madblue w-full left-0 sm:static sm:bg-transparent sm:w-fit py-8 sm:py-0 sm:flex" class:hidden={!showNavbar}>
+			<button class="text-white block sm:hidden" on:click={toggleNavbar}
+				><img src={burger} alt="burger" class=" h-5" /></button
+			>
+			<div
+				class="flex flex-col gap-x-8 font-anton sm:items-center text-white text-2xl capitalize sm:flex-row absolute top-full z-10 bg-madblue w-full left-0 sm:static sm:bg-transparent sm:w-fit py-8 sm:py-0 sm:flex"
+				class:hidden={!showNavbar}
+			>
 				<div class="px-4 py-2 text-center sm:p-0">
 					<a
+						on:click={handleNavItemClick}
 						href="/about"
 						class="border-b border-white"
 						class:border-madyellow={path.includes('/about')}
@@ -68,6 +77,7 @@
 				</div>
 				<div class="px-4 py-2 text-center sm:p-0">
 					<a
+						on:click={handleNavItemClick}
 						href="/music"
 						class="border-b border-white"
 						class:border-madyellow={path.includes('/music')}
@@ -76,15 +86,16 @@
 				</div>
 				<div class="px-4 py-2 text-center sm:p-0">
 					<a
+						on:click={handleNavItemClick}
 						href="/gallery"
 						class="border-b border-white"
 						class:border-madyellow={path.includes('/gallery')}
 						class:text-madyellow={path.includes('/gallery')}>gallery</a
 					>
-
 				</div>
 				<div class="px-4 py-2 text-center sm:p-0">
 					<a
+						on:click={handleNavItemClick}
 						href="/tour"
 						class="border-b border-white"
 						class:border-madyellow={path.includes('/tour')}
@@ -93,6 +104,7 @@
 				</div>
 				<div class="px-4 py-2 text-center sm:p-0">
 					<a
+						on:click={handleNavItemClick}
 						href="/shop"
 						class="border-b border-white"
 						class:border-madyellow={path.includes('/shop')}
@@ -101,6 +113,7 @@
 				</div>
 				<div class="px-4 py-2 text-center sm:p-0">
 					<a
+						on:click={handleNavItemClick}
 						href="/contact"
 						class="border-b border-white"
 						class:border-madyellow={path.includes('/contact')}
@@ -109,6 +122,7 @@
 				</div>
 				<div class="px-4 py-2 text-center sm:p-0">
 					<a
+						on:click={handleNavItemClick}
 						href="/discord"
 						class="border-b border-white"
 						class:border-madyellow={path.includes('/discord')}
@@ -120,49 +134,65 @@
 
 		<div class="w-screen h-20 absolute right-0">
 			<div class="wrapper font-anton text-madgreen text-xl">
-				<div class="item item1"><span class="flex w-full h-full justify-center items-center">MAHARUPA - OUT NOW!</span></div>
+				<div class="item item1">
+					<span class="flex w-full h-full justify-center items-center">MAHARUPA - OUT NOW!</span>
+				</div>
 				<div class="item item2">
 					<div class=" flex justify-center items-center w-full h-full">
 						<span class="h-5 w-5 bg-madgreen rounded-full"></span>
 					</div>
 				</div>
-				<div class="item item3"><span class="flex w-full h-full justify-center items-center">MAHARUPA - OUT NOW!</span></div>
+				<div class="item item3">
+					<span class="flex w-full h-full justify-center items-center">MAHARUPA - OUT NOW!</span>
+				</div>
 				<div class="item item4">
 					<div class=" flex justify-center items-center w-full h-full">
 						<span class="h-5 w-5 bg-madgreen rounded-full"></span>
 					</div>
 				</div>
-				<div class="item item5"><span class="flex w-full h-full justify-center items-center">MAHARUPA - OUT NOW!</span></div>
+				<div class="item item5">
+					<span class="flex w-full h-full justify-center items-center">MAHARUPA - OUT NOW!</span>
+				</div>
 				<div class="item item6">
 					<div class=" flex justify-center items-center w-full h-full">
 						<span class="h-5 w-5 bg-madgreen rounded-full"></span>
 					</div>
 				</div>
-				<div class="item item7"><span class="flex w-full h-full justify-center items-center">MAHARUPA - OUT NOW!</span></div>
+				<div class="item item7">
+					<span class="flex w-full h-full justify-center items-center">MAHARUPA - OUT NOW!</span>
+				</div>
 				<div class="item item8">
 					<div class=" flex justify-center items-center w-full h-full">
 						<span class="h-5 w-5 bg-madgreen rounded-full"></span>
 					</div>
 				</div>
-				<div class="item item9"><span class="flex w-full h-full justify-center items-center">MAHARUPA - OUT NOW!</span></div>
+				<div class="item item9">
+					<span class="flex w-full h-full justify-center items-center">MAHARUPA - OUT NOW!</span>
+				</div>
 				<div class="item item10">
 					<div class=" flex justify-center items-center w-full h-full">
 						<span class="h-5 w-5 bg-madgreen rounded-full"></span>
 					</div>
 				</div>
-				<div class="item item11"><span class="flex w-full h-full justify-center items-center">MAHARUPA - OUT NOW!</span></div>
+				<div class="item item11">
+					<span class="flex w-full h-full justify-center items-center">MAHARUPA - OUT NOW!</span>
+				</div>
 				<div class="item item12">
 					<div class=" flex justify-center items-center w-full h-full">
 						<span class="h-5 w-5 bg-madgreen rounded-full"></span>
 					</div>
 				</div>
-				<div class="item item13"><span class="flex w-full h-full justify-center items-center">MAHARUPA - OUT NOW!</span></div>
+				<div class="item item13">
+					<span class="flex w-full h-full justify-center items-center">MAHARUPA - OUT NOW!</span>
+				</div>
 				<div class="item item14">
 					<div class=" flex justify-center items-center w-full h-full">
 						<span class="h-5 w-5 bg-madgreen rounded-full"></span>
 					</div>
 				</div>
-				<div class="item item15"><span class="flex w-full h-full justify-center items-center">MAHARUPA - OUT NOW!</span></div>
+				<div class="item item15">
+					<span class="flex w-full h-full justify-center items-center">MAHARUPA - OUT NOW!</span>
+				</div>
 				<div class="item item16">
 					<div class=" flex justify-center items-center w-full h-full">
 						<span class="h-5 w-5 bg-madgreen rounded-full"></span>
@@ -178,7 +208,9 @@
 			<div class="w-full h-[2px] sm:h-1 bg-black"></div>
 		</div>
 
-		<footer class="grid gap-x-4  relative overflow-x-visible grid-cols-4 pb-10 px-4 sm:grid-cols-3 sm:px-0 sm:pb-20">
+		<footer
+			class="grid gap-x-4 relative overflow-x-visible grid-cols-4 pb-10 px-4 sm:grid-cols-3 sm:px-0 sm:pb-20"
+		>
 			<img
 				src={logoLong}
 				alt="logoLong"
@@ -199,7 +231,8 @@
 				{#each footerLinks as link}
 					<a
 						href={link.link}
-						class="block font-roboto font-bold text-madblue underline mb-2 text-[10px] sm:text-xl">{link.text}</a
+						class="block font-roboto font-bold text-madblue underline mb-2 text-[10px] sm:text-xl"
+						>{link.text}</a
 					>
 				{/each}
 			</div>
@@ -207,7 +240,9 @@
 				<p class="font-anton mb-4 sm:text-3xl sm:mb-8">Newsletter</p>
 				<form action="" class="items-end font-roboto gap-x-8 mb-6 sm:mb-10 sm:flex">
 					<div class="flex-grow">
-						<label for="newsletterEmail" class="block text-[10px] sm:text-sm">Enter your Email</label>
+						<label for="newsletterEmail" class="block text-[10px] sm:text-sm"
+							>Enter your Email</label
+						>
 						<input
 							type="email"
 							name="newsletterEmail"
