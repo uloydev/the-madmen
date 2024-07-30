@@ -53,7 +53,7 @@
 </script>
 
 <div>
-	<div class="relative mb-10">
+	<div class="relative mb-2 sm:mb-10">
 		<div class="rounded-xl border-4 border-madblue max-h-[400px] overflow-hidden mt-20">
 			{#each sliders as slide, idx}
 				<img
@@ -64,28 +64,31 @@
 				/>
 			{/each}
 		</div>
-		<div class="absolute bottom-0 p-8">
-			<h1 class="font-anton text-madyellow text-8xl italic">SHOP</h1>
+		<div class="absolute bottom-0 p-4 sm:p-8">
+			<h1 class="font-anton text-madyellow text-[40px] sm:text-8xl italic">SHOP</h1>
 		</div>
 	</div>
-	<p class="my-6 py-4 font-anton text-3xl text-madyellow text-center bg-madred">PRODUCTS</p>
-	<div class="grid grid-cols-3 gap-4">
+	<p class="py-4 font-anton text-3xl text-madyellow text-center bg-madred my-4 sm:my-6">PRODUCTS</p>
+	<div class="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-4">
 		{#each products as product}
-			<a href="/shop/{product.id}" class="p-2 block">
-				<div class="grid grid-cols-2 gap-x-6 bg-madsecondary p-6 hover:bg-madblue hover:text-white">
+			<a href="/shop/{product.id}" class="sm:p-2 block">
+				<div class="grid grid-cols-2  bg-madsecondary p-3 gap-x-3 sm:gap-x-6 sm:p-6 hover:bg-madblue hover:text-white">
 					<img src={product.image[0]} alt={product.title} class="w-full" />
 					<div class="flex flex-col justify-between font-roboto">
-						<p class="font-extrabold text-xl">{product.title}</p>
+						<p class="font-extrabold text-[10px] sm:text-xl">{product.title}</p>
 						<div>
-							<p class="text-sm mb-2">{IDR.format(product.price)}</p>
+							<p class="text-[7px] sm:text-sm sm:mb-2">{IDR.format(product.price)}</p>
 							<a id="product{product.id}"
 								href="/shop/{product.id}"
-								class="bg-madbase p-1.5 underline text-madblue font-bold text-lg hover:bg-madred hover:text-madyellow">Buy Now</a
+								class="bg-madbase px-1 sm:p-1.5 underline text-madblue font-bold text-[10px] sm:text-lg hover:bg-madred hover:text-madyellow">Buy Now</a
 							>
 						</div>
 					</div>
 				</div>
 			</a>
 		{/each}
+	</div>
+	<div class="text-center text-xl font-anton mt-4 sm:text-3xl sm:mt-8">
+		1 / 1
 	</div>
 </div>
