@@ -71,8 +71,8 @@
 	<p class="py-4 font-anton text-3xl text-madyellow text-center bg-madred my-4 sm:my-6">PRODUCTS</p>
 	<div class="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-4">
 		{#each products as product}
-			<a href="/shop/{product.id}" class="sm:p-2 block">
-				<div class="grid grid-cols-2  bg-madsecondary p-3 gap-x-3 sm:gap-x-6 sm:p-6 hover:bg-madblue hover:text-white">
+			<a href="/shop/{product.id}" class="h-full sm:p-2 block">
+				<div class="h-full grid grid-cols-2  bg-madsecondary p-3 gap-x-3 sm:gap-x-6 sm:p-6 hover:bg-madblue hover:text-white">
 					<img src={product.image[0]} alt={product.title} class="w-full" />
 					<div class="flex flex-col justify-between font-roboto">
 						<p class="font-extrabold text-[10px] sm:text-xl">{product.title}</p>
