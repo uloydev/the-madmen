@@ -220,46 +220,46 @@
 </script>
 
 <div class="overflow-x-hidden">
-	<div class="relative mb-10">
+	<div class="relative mb-4 sm:mb-10">
 		<div class="rounded-xl border-4 border-madblue max-h-[400px] overflow-hidden mt-20">
 			<img src={slide} alt="slider" class="w-full max-h-[500px] object-cover object-top" />
 		</div>
-		<div class="absolute bottom-0 p-8">
-			<h1 class=" font-anton text-madyellow text-8xl italic">GALLERY</h1>
+		<div class="absolute bottom-0 p-4 sm:p-8">
+			<h1 class=" font-anton text-madyellow text-[40px] sm:text-8xl italic">GALLERY</h1>
 		</div>
 	</div>
-	<p class="my-6 py-4 font-anton text-3xl text-madyellow text-center bg-madred">VIDEOS</p>
+	<p class="py-4 font-anton text-3xl text-madyellow text-center bg-madred my-2 sm:my-6">VIDEOS</p>
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
 	<div class="overflow-x-scroll select-none" id="scrollContainer" bind:this={dragScrollContainer} on:mousedown={dragScroll.dragMouseDown} on:mouseup={dragScroll.dragMouseUp} on:mousemove={dragScroll.dragMouseScroll} on:mouseleave={dragScroll.dragMouseLeave}>
 		<div class="flex">
 			{#each data.videos as video}
-				<div class="flex-none w-1/3 p-4">
+				<div class="flex-none w-4/5 p-2 sm:w-1/3 sm:p-4">
 					<div class="relative">
 						<img src={video.thumbnail} alt={video.title} class="w-full aspect-video">
-						<span class="absolute bottom-4 right-12 z-10 text-white">{video.duration}</span>
+						<span class="absolute z-10 text-white text-sm bottom-2 right-6 sm:bottom-4 sm:right-12 sm:text-base">{video.duration}</span>
 						<div class="absolute top-0 left-0 h-full w-full bg-black/50"></div>
 						<a href={video.link} target="_blank">
 							<img src={playBtn} alt="play {video.title}" class="w-12 aspect-square absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
 						</a>
 					</div>
-					<h1 class="font-roboto text-lg font-extrabold my-4">{video.title}</h1>
+					<h1 class="font-roboto text-lg font-extrabold mt-4 mb-1 sm:my-4">{video.title}</h1>
 					<p class="text-sm font-roboto text-[#8A8A8A]">{video.views}x ditonton • {video.publishedAt}</p>
 				</div>
 			{/each}
 		</div>
 	</div>
-	<p class="my-6 py-4 font-anton text-3xl text-white text-center bg-madgreen">PHOTOS</p>
-	<div class="grid grid-cols-3 gap-4">
+	<p class="py-4 font-anton text-3xl text-white text-center bg-madgreen mb-2 sm:my-6">PHOTOS</p>
+	<div class="grid grid-cols-3 gap-2 sm:gap-4">
 		{#each posts as post, idx}
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<!-- svelte-ignore a11y-no-static-element-interactions -->
 			<div class="relative" on:click={(e) => openPhotoSlider(idx)}>
 				<img src={post.thumbnail} alt="post" class="w-full h-full object-cover" />
 				<div
-					class="absolute top-0 left-0 w-full h-full flex flex-col justify-end px-8 py-2 font-roboto text-white"
+					class="absolute top-0 left-0 w-full h-full flex flex-col justify-end p-2 font-roboto text-white bg-black/50 sm:px-8"
 				>
-					<p class="text-2xl font-extrabold mb-4">{post.title}</p>
-					<p class="text-sm">{post.date}</p>
+					<p class="text-[10px] sm:font-extrabold sm:mb-4 sm:text-2xl">{post.title}</p>
+					<p class="text-[10px] sm:text-sm">{post.date}</p>
 				</div>
 			</div>
 		{/each}
@@ -271,7 +271,7 @@
 		class:hidden={!photoSliderActive}
 		on:click={handleOutsideClick}
 	>
-		<div class="relative w-full max-w-[60%]">
+		<div class="relative w-full max-w-[90%] sm:max-w-[60%]">
 			{#each photoSlider as photo, idx}
 				<img
 					src={photo}
@@ -280,11 +280,11 @@
 					class:hidden={currentImage != idx}
 				/>
 			{/each}
-			<button on:click={prevImage} class="absolute top-1/2 left-10 -translate-y-1/2">
-				<img src={left} alt="prev button" class="h-8 aspect-square" />
+			<button on:click={prevImage} class="absolute top-1/2 -translate-y-1/2 left-4 sm:left-10">
+				<img src={left} alt="prev button" class="h-4 sm:h-8 aspect-square" />
 			</button>
-			<button on:click={nextImage} class="absolute top-1/2 right-10 -translate-y-1/2">
-				<img src={right} alt="next button" class="h-8 aspect-square" />
+			<button on:click={nextImage} class="absolute top-1/2 -translate-y-1/2 right-4 sm:right-10">
+				<img src={right} alt="next button" class="h-4 sm:h-8 aspect-square" />
 			</button>
 		</div>
 	</div>
