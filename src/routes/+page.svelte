@@ -70,7 +70,7 @@
 	<meta name="description" content="The MadMan" />
 </svelte:head>
 
-<div class=" gap-x-5 mt-20 px-2 sm:px-0 sm:grid sm:grid-cols-12">
+<div class=" gap-x-5 mt-20 sm:px-0 sm:grid sm:grid-cols-12">
 	<div class="w-full mb-4 sm:mb-0 sm:col-span-8 rounded-xl border-madblue border-4 overflow-hidden">
 		{#each homeSliders as slide, i}
 			<img src={slide} alt="home slider" class="w-full" class:hidden={i != currentSlide} />

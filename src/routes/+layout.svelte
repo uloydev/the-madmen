@@ -170,21 +170,23 @@
 				</div>
 			</div>
 		</div>
-		<main class="px-2 sm:px-0">
+		<main class="px-4 sm:px-0">
 			<slot />
 		</main>
 
-		<div class="w-full h-1 bg-black my-10"></div>
+		<div class="my-10 px-4 sm:px-0">
+			<div class="w-full h-1 bg-black"></div>
+		</div>
 
-		<footer class="grid grid-cols-3 gap-x-4 pb-20 relative overflow-x-visible">
+		<footer class="grid gap-x-4  relative overflow-x-visible grid-cols-4 pb-10 px-4 sm:grid-cols-3 sm:px-0 sm:pb-20">
 			<img
 				src={logoLong}
 				alt="logoLong"
-				class="h-full w-screen object-cover absolute -z-10 overflow-x-visible"
+				class="h-full absolute -z-10 overflow-x-visible object-cover sm:w-screen"
 			/>
-			<div class="">
-				<p class="font-anton text-3xl mb-8">Social Media</p>
-				<div class="flex gap-x-8 items-center">
+			<div class="col-span-1">
+				<p class="font-anton mb-4 sm:text-3xl sm:mb-8">Social Media</p>
+				<div class="grid grid-cols-3 gap-2 items-center sm:flex sm:gap-x-8 sm:gap-y-0">
 					{#each socials as social}
 						<a href={social.link} target="_blank" rel="noopener noreferrer">
 							<img src={social.icon} alt={social.name} class="w-8" />
@@ -192,35 +194,35 @@
 					{/each}
 				</div>
 			</div>
-			<div class="">
-				<p class="font-anton text-3xl mb-8">Information</p>
+			<div class="col-span-1">
+				<p class="font-anton mb-4 sm:text-3xl sm:mb-8">Information</p>
 				{#each footerLinks as link}
 					<a
 						href={link.link}
-						class="block font-roboto font-bold text-xl text-madblue underline mb-2">{link.text}</a
+						class="block font-roboto font-bold text-madblue underline mb-2 text-[10px] sm:text-xl">{link.text}</a
 					>
 				{/each}
 			</div>
-			<div class="">
-				<p class="font-anton text-3xl mb-8">Newsletter</p>
-				<form action="" class="flex items-end font-roboto gap-x-8 mb-10">
+			<div class="col-span-2 sm:col-span-1">
+				<p class="font-anton mb-4 sm:text-3xl sm:mb-8">Newsletter</p>
+				<form action="" class="items-end font-roboto gap-x-8 mb-6 sm:mb-10 sm:flex">
 					<div class="flex-grow">
-						<label for="newsletterEmail" class="text-sm block">Enter your Email</label>
+						<label for="newsletterEmail" class="block text-[10px] sm:text-sm">Enter your Email</label>
 						<input
 							type="email"
 							name="newsletterEmail"
 							id="newsletterEmail"
 							placeholder="Type Here"
-							class="block w-full p-1"
+							class="block w-full p-1 text-[10px] mb-2 sm:my-0 sm:text-base"
 						/>
 					</div>
 					<button
 						type="submit"
-						class="bg-madyellow font-roboto font-bold text-xl text-madblue underline p-2"
+						class="bg-madyellow font-roboto font-bold text-madblue underline py-1 px-3 text-[10px] sm:p-2 sm:text-xl"
 						>Submit</button
 					>
 				</form>
-				<p class="font-roboto text-sm max-w-[75%]">
+				<p class="font-roboto text-[10px] sm:text-sm sm:max-w-[75%]">
 					Karya ini merupakan bagian dari Tugas Akhir di Prodi DKV IKJ, semua data dalam karya ini
 					diperlihatkan hanya untuk keperluan presentasi tugas, tidak ditujukan untuk kepentingan
 					komersial.
