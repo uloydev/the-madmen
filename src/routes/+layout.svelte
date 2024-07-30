@@ -174,8 +174,8 @@
 			<slot />
 		</main>
 
-		<div class="my-10 px-4 sm:px-0">
-			<div class="w-full h-1 bg-black"></div>
+		<div class="px-4 mt-8 mb-4 sm:my-10 sm:px-0">
+			<div class="w-full h-[2px] sm:h-1 bg-black"></div>
 		</div>
 
 		<footer class="grid gap-x-4  relative overflow-x-visible grid-cols-4 pb-10 px-4 sm:grid-cols-3 sm:px-0 sm:pb-20">

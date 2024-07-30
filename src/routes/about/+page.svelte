@@ -18,7 +18,7 @@
 </script>
 
 <div>
-	<div class="relative mb-10">
+	<div class="relative mb-4 sm:mb-10">
 		<div class="rounded-xl border-4 border-madblue max-h-[400px] overflow-hidden mt-20">
 			{#each sliders as slide, idx}
 				<img
@@ -29,11 +29,11 @@
 				/>
 			{/each}
 		</div>
-        <div class="absolute bottom-0 p-8">
-            <h1 class="font-jotione text-madyellow text-8xl">About</h1>
+        <div class="absolute bottom-0 p-4 sm:p-8">
+            <h1 class="font-jotione text-madyellow text-[40px] sm:text-8xl">About</h1>
         </div>
 	</div>
-    <div class="grid grid-cols-2 font-roboto text-xl font-extrabold text-madblue gap-x-4 mb-10">
+    <div class="grid grid-cols-2 font-roboto font-extrabold text-madblue gap-x-4 mb-4 text-[10px] sm:mb-10 sm:text-xl">
         <p>
             Mad Madmen are a Jakarta based musical trio formed in 2018. The band consists of Kalam Mahardhika (Guitar/Vocals), Marvin Muhammad (Bass/Vocals) and Andika Rahimy (Drums). The musical dynamic of Mad Madmen plays upon mixing complex rhythmic and melodic properties along with multiple idiomatic elements all of which are glued together by extended jams. Collectively, Mad Madmen identify themselves as a "Jazzed-Up Funkadelic Prog-Pop Power Trio".
         </p>
@@ -43,20 +43,20 @@
     </div>
     <div class="relative">
         <div class="h-full w-[200vw] absolute bg-black -z-10 -left-[50vw] mx-auto"></div>
-        <div class="grid grid-cols-4 gap-x-6 font-roboto text-lg font-bold text-white text-center uppercase py-6">
+        <div class="grid grid-cols-4 font-roboto text-lg font-bold text-white text-center uppercase pt-2 pb-4 gap-x-4 sm:py-6 sm:gap-x-6">
             <div>
                 <img src={personelHeader} alt="personel header" class="w-full object-cover">
             </div>
             <a href="/about/marvin" class="block">
-                <span class="mb-6 block">marvin</span>
+                <span class="block mb-2 text-xs sm:mb-6 sm:text-base">marvin</span>
                 <img src={personel1} alt="personel 1" class="w-full object-cover">
             </a>
             <a href="/about/kalam" class="block">
-                <span class="mb-6 block">kalam</span>
+                <span class="block mb-2 text-xs sm:mb-6 sm:text-base">kalam</span>
                 <img src={personel2} alt="personel 2" class="w-full object-cover">
             </a>
             <a href="/about/dika" class="block">
-                <span class="mb-6 block">dika</span>
+                <span class="block mb-2 text-xs sm:mb-6 sm:text-base">dika</span>
                 <img src={personel3} alt="personel 3" class="w-full object-cover">
             </a>
         </div>
