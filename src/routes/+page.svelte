@@ -118,29 +118,29 @@
 </div>
 
 <!-- release / music section -->
-<div class="flex gap-x-4 max-h-[500px] h-full">
+<div class="flex gap-4 flex-col h-full sm:flex-row sm:max-h-[500px] sm:gap-y-0">
 	<div class="h-full mt-8 flex-grow">
-		<h2 class="px-8 py-4 bg-madred text-white capitalize font-anton text-4xl">Latest release</h2>
+		<h2 class="p-4 bg-madred text-white capitalize font-anton text-xl sm:text-4xl sm:px-8">Latest release</h2>
 		<div class="flex h-fit bg-madlightgrey">
 			<div class="bg-black">
-				<img src={latestRelease} alt="latest release" class=" object-cover h-[400px]" />
+				<img src={latestRelease} alt="latest release" class=" object-cover sm:h-[400px]" />
 			</div>
-			<div class="h-full py-12 px-8 flex-grow">
-				<p class="font-anton text-6xl text-madred mb-12">MAHAPURA</p>
-				<p class="font-roboto text-sm mb-6">SINGLE | Mad Madmen ft. Anda Perdana |2023 | 5:24</p>
+			<div class="h-full p-4 sm:py-12 sm:px-8 sm:flex-grow">
+				<p class="font-anton text-madred mb-4 text-3xl sm:text-6xl sm:mb-12">MAHAPURA</p>
+				<p class="font-roboto text-[10px] mb-6 sm:text-sm">SINGLE | Mad Madmen ft. Anda Perdana | 2023 | 5:24</p>
 
-				<a href="#listen" class="text-madblue underline font-roboto uppercase font-bold text-xl"
+				<a href="#listen" class="text-madblue underline font-roboto uppercase font-bold text-sm sm:text-xl"
 					>listen now</a
 				>
 			</div>
 		</div>
 	</div>
-	<div class="max-h-[500px] h-full">
-		<div class="flex justify-center">
-			<img src={asset1} alt="asset1" class="h-[200px]" />
+	<div class="grid grid-cols-12 sm:h-full sm:max-h-[500px] sm:block">
+		<div class="col-span-4 col-start-9 row-start-1 flex justify-center relative">
+			<img src={asset1} alt="asset1" class="absolute top-0 -left-[20px] sm:h-[200px] sm:relative" />
 		</div>
-		<div class="bg-madyellow p-4 h-[300px] flex flex-col shadow-picks">
-			<p class="text-center font-barriecito text-3xl text-madblue pb-4">Creator's Picks</p>
+		<div class="col-span-8 col-start-1 row-start-1 bg-madyellow flex flex-col shadow-picks h-full max-h-[150px] px-4 pb-4 sm:max-h-[300px] sm:pt-4">
+			<p class="text-center font-barriecito text-3xl text-madblue sm:pb-4">Creator's Picks</p>
 			<div class="h-full bg-black overflow-y-scroll">
 				<div class="p-4 bg-white">
 					{#each creatorPicks as pick}
