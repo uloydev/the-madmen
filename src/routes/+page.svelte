@@ -99,22 +99,25 @@
 		</div>
 	</div>
 </div>
-<div class="bg-white border-madgreen border-2 rounded-xl grid grid-cols-12 mt-20 shadow-bio">
-	<div class="h-full relative w-full col-span-4">
-		<img src={personel} alt="personel" class="absolute left-[10%] bottom-0 h-[125%]" />
+
+<!-- personel / about section -->
+<div class="bg-white border-madgreen border-2 rounded-xl grid grid-cols-12 shadow-bio mt-4 sm:mt-20">
+	<div class="h-full relative w-full col-span-4 p-2 sm:p-0">
+		<img src={personel} alt="personel" class="sm:absolute sm:left-[10%] sm:bottom-0 sm:h-[125%]" />
 	</div>
-	<div class="h-full col-span-6 col-start-5 py-8">
-		<h1 class="font-jotione text-8xl animate-logo-text transition-colors">The Madmen</h1>
-		<p class="text-madblue font-roboto my-4">
+	<div class="h-full col-span-8 col-start-5 p-2  sm:col-span-6 sm:py-8 sm:px-0">
+		<h1 class="font-jotione text-[40px] animate-logo-text transition-colors sm:text-8xl">The Madmen</h1>
+		<p class="font-roboto text-[10px] sm:text-base sm:text-madblue sm:my-4">
 			Mad Madmen are a Jakarta based musical trio formed in 2018. The band consists of Kalam
-			Mahardhika (Guitar/Vocals), Marvin Muhammad (Bass/Vocals) and Andika Rahimy (Drums). The
+			Mahardhika (Guitar/Vocals), Marvin Muhammad (Bass/Vocals) and Andika Rahimy (Drums).<span class="hidden sm:inline">The
 			musical dynamic of Mad Madmen plays upon mixing complex rhythmic and melodic properties along
-			with multiple idiomatic elements all of which are glued together by extended jams. ...
+			with multiple idiomatic elements all of which are glued together by extended jams.</span>...
 		</p>
 		<a href="#more" class="text-madblue underline uppercase font-roboto font-bold">More</a>
 	</div>
 </div>
 
+<!-- release / music section -->
 <div class="flex gap-x-4 max-h-[500px] h-full">
 	<div class="h-full mt-8 flex-grow">
 		<h2 class="px-8 py-4 bg-madred text-white capitalize font-anton text-4xl">Latest release</h2>
