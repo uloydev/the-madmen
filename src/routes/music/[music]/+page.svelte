@@ -9,15 +9,15 @@
 	
 </script>
 
-<div>
-	<div class="text-madblue font-anton underline text-3xl flex gap-x-4 capitalize mb-4 mt-20">
+<div class="pt-20">
+	<div class="text-madblue font-anton underline flex capitalize mb-2 text-sm gap-x-1 sm:mb-10 sm:text-3xl sm:gap-x-4">
 		<a href="/music">Music</a>
 		<span>&gt;</span>
 		<a href="/music/{data.id}">{data.title}({data.type})</a>
 	</div>
     <Dicsography {data} />
-	<p class="my-6 py-4 font-anton text-3xl text-white text-center bg-madgreen">DISCOGRAPHY</p>
-    <grid class=" grid grid-cols-4 gap-6">
+	<p class="py-4 font-anton text-3xl text-white text-center bg-madgreen my-2 sm:my-6">DISCOGRAPHY</p>
+    <grid class="grid grid-cols-4 gap-4 sm:gap-6">
         {#each discographyData as data}
         <a href="/music/{data.id}">
             <img src={data.cover} alt="cover discography" class="w-full aspect-square">
