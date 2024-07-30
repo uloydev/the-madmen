@@ -55,7 +55,7 @@
 			class=" h-[75px] pl-6 pr-8 w-full bg-gradient-to-b from-[#0000FE] to-[#000098] flex justify-between relative"
 		>
 			<div class="flex items-center">
-				<a href="/">
+				<a on:click={handleNavItemClick} href="/">
 					<img src={logo} alt="logo mad madmen" class="h-[30px] sm:h-[50px]" />
 				</a>
 			</div>
