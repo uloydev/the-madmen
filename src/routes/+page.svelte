@@ -71,19 +71,19 @@
 </svelte:head>
 
 <div class=" gap-x-5 mt-12 sm:px-0 sm:grid sm:grid-cols-12">
-	<div class="w-full mb-4 sm:mb-0 sm:col-span-8 rounded-xl border-madblue border-4 overflow-hidden">
+	<div class="w-full mb-4 sm:mb-0 sm:col-span-8 rounded-xl border-madblue border-4 overflow-hidden sm:h-fit 2xl:h-full">
 		{#each homeSliders as slide, i}
 			<img src={slide} alt="home slider" class="w-full" class:hidden={i != currentSlide} />
 		{/each}
 	</div>
-	<div class="col-span-4 grid grid-row-12 h-full font-anton gap-y-4 sm:gap-y-10">
+	<div class="col-span-4 grid grid-row-12 h-full font-anton gap-y-4 2xl:gap-y-10">
 		<div class="row-span-8 row-start-5 sm:row-start-1">
 			<p class="px-4 py-8 bg-madred capitalize text-madyellow text-lg">
 				upcoming shows / local dates
 			</p>
-			<div class="px-8 pt-12 pb-4 bg-madsecondary">
+			<div class="px-8 pt-4 sm:pt-6 2xl:pt-12 pb-4 bg-madsecondary">
 				<p class="text-6xl">2 JUN</p>
-				<p class="text-xl mt-6 mb-8 font-roboto">BIANG KEROK / Jakarta, INA</p>
+				<p class="text-xl my-4 2xl:mt-6 2xl:mb-8 font-roboto">BIANG KEROK / Jakarta, INA</p>
 				<a href="#" class="block py-4 transition-all text-madyellow animate-blink-fast text-center"
 					>Notify Me</a
 				>
@@ -101,12 +101,12 @@
 </div>
 
 <!-- personel / about section -->
-<div class="bg-white border-madgreen border-2 rounded-xl grid grid-cols-12 shadow-bio mt-4 sm:mt-20">
+<div class="bg-white border-madgreen border-2 rounded-xl grid grid-cols-12 shadow-bio mt-4 sm:mt-8 2xl:mt-20">
 	<div class="h-full relative w-full col-span-4 p-2 sm:p-0">
-		<img src={personel} alt="personel" class="sm:absolute sm:left-[10%] sm:bottom-0 sm:h-[125%]" />
+		<img src={personel} alt="personel" class="sm:absolute sm:left-[10%] sm:bottom-0 sm:h-[110%] 2xl:h-[125%]" />
 	</div>
 	<div class="h-full col-span-8 col-start-5 p-2  sm:col-span-6 sm:py-8 sm:px-0">
-		<h1 class="font-jotione text-[40px] animate-logo-text transition-colors sm:text-8xl">The Madmen</h1>
+		<h1 class="font-jotione text-[40px] animate-logo-text transition-colors sm:text-6xl 2xl:text-8xl">The Madmen</h1>
 		<p class="font-roboto text-[10px] sm:text-base sm:text-madblue sm:my-4">
 			Mad Madmen are a Jakarta based musical trio formed in 2018. The band consists of Kalam
 			Mahardhika (Guitar/Vocals), Marvin Muhammad (Bass/Vocals) and Andika Rahimy (Drums).<span class="hidden sm:inline">The
