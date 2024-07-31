@@ -12,7 +12,7 @@
 			<img src={slide} alt="slider" class="w-full max-h-[500px] object-cover object-top" />
 		</div>
 		<div class="absolute bottom-0 p-4 sm:p-8">
-			<h1 class="font-anton text-madyellow text-[40px] sm:text-8xl italic">CONTACT</h1>
+			<h1 class="text-shadow font-anton text-madyellow text-[40px] sm:text-8xl italic">CONTACT</h1>
 		</div>
 	</div>
 

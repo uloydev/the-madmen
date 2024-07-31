@@ -30,7 +30,7 @@
 			{/each}
 		</div>
         <div class="absolute bottom-0 p-4 sm:p-8">
-            <h1 class="font-jotione text-madyellow text-[40px] sm:text-8xl">About</h1>
+            <h1 class="text-shadow font-jotione text-madyellow text-[40px] sm:text-8xl">About</h1>
         </div>
 	</div>
     <div class="grid grid-cols-2 font-roboto font-extrabold text-madblue gap-x-4 mb-4 text-[10px] sm:mb-10 sm:text-xl">

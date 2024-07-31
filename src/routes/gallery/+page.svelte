@@ -225,7 +225,7 @@
 			<img src={slide} alt="slider" class="w-full max-h-[500px] object-cover object-top" />
 		</div>
 		<div class="absolute bottom-0 p-4 sm:p-8">
-			<h1 class=" font-anton text-madyellow text-[40px] sm:text-8xl italic">GALLERY</h1>
+			<h1 class="text-shadow font-anton text-madyellow text-[40px] sm:text-8xl italic">GALLERY</h1>
 		</div>
 	</div>
 	<p class="py-4 font-anton text-3xl text-madyellow text-center bg-madred my-2 sm:my-6">VIDEOS</p>

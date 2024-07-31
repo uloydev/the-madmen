@@ -65,7 +65,7 @@
 			{/each}
 		</div>
 		<div class="absolute bottom-0 p-4 sm:p-8">
-			<h1 class="font-anton text-madyellow text-[40px] sm:text-8xl italic">SHOP</h1>
+			<h1 class="text-shadow font-anton text-madyellow text-[40px] sm:text-8xl italic">SHOP</h1>
 		</div>
 	</div>
 	<p class="py-4 font-anton text-3xl text-madyellow text-center bg-madred my-4 sm:my-6">PRODUCTS</p>
