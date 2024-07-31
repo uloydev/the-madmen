@@ -4,7 +4,7 @@
 </script>
 
 <div>
-    <div class="flex flex-col justify-center items-center gap-y-4 sm:gap-y-12 my-20">
+    <div class="flex flex-col justify-center items-center gap-y-4 sm:gap-y-12 my-12">
         <img src={discordLogo} alt="discord logo" class="w-1/2 sm:w-96">
         <p class=" font-barriecito text-4xl text-madred text-center">
             Mad Madmen invites you to join Madfrens server!

@@ -17,7 +17,7 @@
 	};
 </script>
 
-<div class="pt-20">
+<div class="pt-12">
 	<div class="text-madblue font-anton underline flex gap-x-1 capitalize mb-4 text-sm sm:text-3xl sm:gap-x-4">
 		<a href="/about">About</a>
 		<span>&gt;</span>

@@ -9,7 +9,7 @@
 	
 </script>
 
-<div class="pt-20">
+<div class="pt-12">
 	<div class="text-madblue font-anton underline flex capitalize mb-2 text-sm gap-x-1 sm:mb-10 sm:text-3xl sm:gap-x-4">
 		<a href="/music">Music</a>
 		<span>&gt;</span>

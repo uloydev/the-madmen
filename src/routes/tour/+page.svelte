@@ -25,7 +25,7 @@
 
 <div>
 	<div class="relative mb-2 sm:mb-10">
-		<div class="rounded-xl border-4 border-madblue max-h-[500px] overflow-hidden mt-20">
+		<div class="rounded-xl border-4 border-madblue max-h-[500px] overflow-hidden mt-12">
 			<img src={slider} alt="slider" class="w-full max-h-[500px] object-cover object-top" />
 		</div>
 		<div class="absolute bottom-0 p-4 sm:p-8">

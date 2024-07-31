@@ -54,7 +54,7 @@
 
 <div>
 	<div class="relative mb-2 sm:mb-10">
-		<div class="rounded-xl border-4 border-madblue max-h-[400px] overflow-hidden mt-20">
+		<div class="rounded-xl border-4 border-madblue max-h-[400px] overflow-hidden mt-12">
 			{#each sliders as slide, idx}
 				<img
 					src={slide}

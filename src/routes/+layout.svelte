@@ -132,14 +132,14 @@
 			</div>
 		</nav>
 
-		<div class="w-screen h-20 absolute right-0">
-			<div class="wrapper font-anton text-madgreen text-xl">
+		<div class="w-screen h-12 absolute right-0">
+			<div class="wrapper font-anton text-madgreen text-[23px]">
 				<div class="item item1">
 					<span class="flex w-full h-full justify-center items-center">MAHARUPA - OUT NOW!</span>
 				</div>
 				<div class="item item2">
 					<div class=" flex justify-center items-center w-full h-full">
-						<span class="h-5 w-5 bg-madgreen rounded-full"></span>
+						<span class="h-8 w-8 bg-madgreen rounded-full"></span>
 					</div>
 				</div>
 				<div class="item item3">
@@ -147,7 +147,7 @@
 				</div>
 				<div class="item item4">
 					<div class=" flex justify-center items-center w-full h-full">
-						<span class="h-5 w-5 bg-madgreen rounded-full"></span>
+						<span class="h-8 w-8 bg-madgreen rounded-full"></span>
 					</div>
 				</div>
 				<div class="item item5">
@@ -155,7 +155,7 @@
 				</div>
 				<div class="item item6">
 					<div class=" flex justify-center items-center w-full h-full">
-						<span class="h-5 w-5 bg-madgreen rounded-full"></span>
+						<span class="h-8 w-8 bg-madgreen rounded-full"></span>
 					</div>
 				</div>
 				<div class="item item7">
@@ -163,7 +163,7 @@
 				</div>
 				<div class="item item8">
 					<div class=" flex justify-center items-center w-full h-full">
-						<span class="h-5 w-5 bg-madgreen rounded-full"></span>
+						<span class="h-8 w-8 bg-madgreen rounded-full"></span>
 					</div>
 				</div>
 				<div class="item item9">
@@ -171,7 +171,7 @@
 				</div>
 				<div class="item item10">
 					<div class=" flex justify-center items-center w-full h-full">
-						<span class="h-5 w-5 bg-madgreen rounded-full"></span>
+						<span class="h-8 w-8 bg-madgreen rounded-full"></span>
 					</div>
 				</div>
 				<div class="item item11">
@@ -179,7 +179,7 @@
 				</div>
 				<div class="item item12">
 					<div class=" flex justify-center items-center w-full h-full">
-						<span class="h-5 w-5 bg-madgreen rounded-full"></span>
+						<span class="h-8 w-8 bg-madgreen rounded-full"></span>
 					</div>
 				</div>
 				<div class="item item13">
@@ -187,7 +187,7 @@
 				</div>
 				<div class="item item14">
 					<div class=" flex justify-center items-center w-full h-full">
-						<span class="h-5 w-5 bg-madgreen rounded-full"></span>
+						<span class="h-8 w-8 bg-madgreen rounded-full"></span>
 					</div>
 				</div>
 				<div class="item item15">
@@ -195,7 +195,7 @@
 				</div>
 				<div class="item item16">
 					<div class=" flex justify-center items-center w-full h-full">
-						<span class="h-5 w-5 bg-madgreen rounded-full"></span>
+						<span class="h-8 w-8 bg-madgreen rounded-full"></span>
 					</div>
 				</div>
 			</div>
@@ -271,7 +271,7 @@
 	.wrapper {
 		margin-inline: auto;
 		position: relative;
-		height: 5rem;
+		height: 3rem;
 		overflow: hidden;
 		display: flex;
 	}
@@ -291,7 +291,7 @@
 	/* item odd */
 	.item:nth-child(even) {
 		width: 200px;
-		height: 5rem;
+		height: 3rem;
 		/* background-color: red; */
 		position: absolute;
 		left: max(calc((200px) * 16), 100%);
@@ -303,7 +303,7 @@
 
 	.item:nth-child(odd) {
 		width: 200px;
-		height: 5rem;
+		height: 3rem;
 		/* background-color: red; */
 		position: absolute;
 		left: max(calc(200px * 16), 100%);
