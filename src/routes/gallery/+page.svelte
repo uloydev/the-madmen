@@ -114,59 +114,76 @@
 	import right from '$lib/icons/right.svg';
 	import left from '$lib/icons/left.svg';
 
-	const posts = [
+	interface Post {
+		thumbnail: string;
+		title: string;
+		date: string;
+		shotBy: string;
+		images: string[];
+	}
+
+	const posts: Post[] = [
 		{
 			thumbnail: post1,
 			title: 'In With The Out, Old With The New, Vol.2 Recording Session (Jakarta)',
 			date: '27.06.2024',
+			shotBy: 'Satrio B.P.',
 			images: [post1a, post1b, post1c, post1d, post1e, post1f, post1g, post1h, post1i]
 		},
 		{
 			thumbnail: post2,
 			title: 'BBC Release Party (M bloc, Jakarta)',
 			date: '07.03.2024',
+			shotBy: 'Satrio B.P.',
 			images: [post2a, post2b, post2c, post2d, post2e, post2f, post2g, post2h, post2i, post2j]
 		},
 		{
 			thumbnail: post3,
 			title: 'PHLOX! Live Recording (SAE Institute, Jakarta)',
 			date: '14.08.2023',
+			shotBy: 'Satrio B.P.',
 			images: [post3a, post3b, post3c, post3d, post3e, post3f, post3g, post3h, post3i, post3j]
 		},
 		{
 			thumbnail: post4,
 			title: 'Java Jazz Festival (Jakarta International Expo, Jakarta)',
 			date: '02.06.2023',
+			shotBy: 'Satrio B.P.',
 			images: [post4a, post4b, post4c, post4d, post4e, post4f, post4g, post4h, post4i, post4j]
 		},
 		{
 			thumbnail: post5,
 			title: 'Sticking Glue No. 4 (Taman Budaya Jawa Tengah, Surakarta)',
 			date: '07.05.2023',
+			shotBy: 'Satrio B.P.',
 			images: [post5a, post5b, post5c, post5d, post5e, post5f, post5g, post5h, post5i, post5j]
 		},
 		{
 			thumbnail: post6,
 			title: 'Pasar Musik (Gambir Expo, Jakarta)',
 			date: '12.02.2023',
+			shotBy: 'Satrio B.P.',
 			images: [post6a, post6b, post6c, post6d, post6e, post6f, post6g, post6h, post6i, post6j]
 		},
 		{
 			thumbnail: post7,
 			title: 'OKT FST (Bali)',
 			date: '22.10.2022',
+			shotBy: 'Satrio B.P.',
 			images: [post7a, post7b, post7c, post7d, post7e, post7f, post7g, post7h, post7i, post7j]
 		},
 		{
 			thumbnail: post8,
 			title: 'Era Agressor Tour x The Brandals (Surabaya)',
 			date: '17.07.2022',
+			shotBy: 'Satrio B.P.',
 			images: [post8a, post8b, post8c, post8d, post8e, post8f, post8g, post8h, post8i, post8j]
 		},
 		{
 			thumbnail: post9,
 			title: 'Asean Music Showcase Festival (Haw Par Villa, Singapore)',
 			date: '27.06.2024',
+			shotBy: 'Satrio B.P.',
 			images: [post9a, post9b, post9c, post9d, post9e, post9f, post9g, post9h, post9i]
 		}
 	];
@@ -174,12 +191,12 @@
 	/** @type {import('./$types').PageData} */
 	export let data;
 
-	let photoSlider: string[] = [];
+	let activePost: Post = posts[0];
 	let currentImage = 0;
 	let photoSliderActive = false;
 
 	function openPhotoSlider(idx: number) {
-		photoSlider = posts[idx].images;
+		activePost = posts[idx];
 		currentImage = 0;
 		photoSliderActive = true;
 	}
@@ -192,7 +209,7 @@
 
 	// mext image and loop
 	function nextImage() {
-		if (currentImage < photoSlider.length - 1) {
+		if (currentImage < activePost.images.length - 1) {
 			currentImage++;
 		} else {
 			currentImage = 0;
@@ -207,7 +224,7 @@
 		if (currentImage > 0) {
 			currentImage--;
 		} else {
-			currentImage = photoSlider.length - 1;
+			currentImage = activePost.images.length - 1;
 		}
 	}
 
@@ -271,8 +288,8 @@
 		class:hidden={!photoSliderActive}
 		on:click={handleOutsideClick}
 	>
-		<div class="relative w-full max-w-[90%] sm:max-w-[60%]">
-			{#each photoSlider as photo, idx}
+		<div class="relative h-fit w-full max-w-[90%] sm:max-w-[60%]">
+			{#each activePost.images as photo, idx}
 				<img
 					src={photo}
 					alt="photo {idx}"
@@ -286,6 +303,16 @@
 			<button on:click={nextImage} class="absolute top-1/2 -translate-y-1/2 right-4 sm:right-10">
 				<img src={right} alt="next button" class="h-4 sm:h-8 aspect-square" />
 			</button>
+		</div>
+		<div class="absolute  bottom-[30%] sm:bottom-[20px] flex justify-between items-center font-roboto w-full text-white text-[10px] sm:text-sm max-w-[90%] sm:max-w-[60%]">
+			<div>
+				<p>{activePost.title}</p>
+				<p>{activePost.date}</p>
+			</div>
+			<div class="text-right">
+				<p>Shot By</p>
+				<p>{activePost.shotBy}</p>
+			</div>
 		</div>
 	</div>
 </div>
