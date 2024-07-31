@@ -15,15 +15,15 @@
 <div class="grid grid-cols-2 gap-x-4 sm:gap-x-6 sm:mb-8">
 	<img src={data.cover} alt="latest release" class="aspec-square w-full" />
 	<div class="h-full flex flex-col justify-evenly sm:block">
-		<h1 class="text-madred font-anton text-3xl mb-1 sm:mb-12 sm:text-8xl">{data.title}</h1>
-		<p class="font-roboto text-[10px] mb-1 font-extrabold sm:text-lg sm:mb-8">
+		<h1 class="text-madred font-anton text-3xl mb-1 sm:mb-4 2xl:mb-12 sm:text-5xl 2xl:text-8xl">{data.title}</h1>
+		<p class="font-roboto text-[10px] mb-1 font-extrabold sm:text-lg sm:mb-4 2xl:mb-8">
 			{data.type} | {data.releaseYear} | {data.type == DiscographyType.SINGLE
 				? data.tracks[0].duration
 				: data.tracks.length + ' Tracks'}
 		</p>
 		{#if data.type == DiscographyType.SINGLE}
 			<div
-				class="h-full overflow-y-scroll font-roboto bg-madsecondary font-bold max-h-[80px] p-2 sm:px-6 sm:max-h-[400px]"
+				class="h-full overflow-y-scroll font-roboto bg-madsecondary font-bold max-h-[80px] p-2 sm:px-6 sm:max-h-[350px] 2xl:max-h-[400px]"
 			>
 				<!-- <div> -->
 				<p class="text-madblue text-lg sm:text-4xl">{data.tracks[0].title}</p>
@@ -42,7 +42,7 @@
 				<!-- </div> -->
 			</div>
 		{:else}
-			<div class="h-full overflow-y-scroll font-roboto flex flex-col  max-h-[80px] gap-y-2 sm:p-2 sm:gap-y-4 sm:max-h-[400px]">
+			<div class="h-full overflow-y-scroll font-roboto flex flex-col  max-h-[80px] gap-y-2 sm:p-2 sm:gap-y-4 sm:max-h-[250px] 2xl:max-h-[400px]">
 				{#each data.tracks as track, i}
 					<Track {track} no={i + 1} />
 				{/each}
